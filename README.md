@@ -12,11 +12,11 @@
 
 3) выполнить команду 
  
-    `git clone https://github.com/hillel-front-end/kiev-front-end-pro-2020-april.git`
+    `git clone https://github.com/hillel-front-end/front-end-pro-kiev-2020-april.git`
 
 4) перейти в папку проекта
 
-    `cd kiev-front-end-pro-2020-april`
+    `cd front-end-pro-kiev-2020-april`
 
 # Обновление репозитория
 
