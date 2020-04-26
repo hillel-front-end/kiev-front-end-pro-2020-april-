@@ -71,4 +71,13 @@ for(var i = 0, size = arr.length; i <= size; i++) {
   arr[i] = Math.floor(Math.random() * (max - min) + min);
 }
 
+
+
 console.log(arr, 'arr');
+
+var mass = new Array(5, 7);
+
+console.log(mass, 'mass');
+mass[mass.length] = 10;
+console.log(mass, 'mass');
+
