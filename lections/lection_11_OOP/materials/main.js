@@ -66,9 +66,17 @@ function HTMLElement(tagName) {
         this.redirect = function() {
             console.log('redirect');
         }
+        
+        this.goTo = function() {
+            
+        }
     } else if(tagName == 'img') {
         this.showPicture = function() {
             console.log(' show picture');
+        }
+    } else if (tagName == 'strong') {
+        this.textBolder = function() {
+            console.log('show bolder text');
         }
     }
 
@@ -95,4 +103,3 @@ a.render();
 img.render();
 
 
-func = new Function();
