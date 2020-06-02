@@ -37,7 +37,11 @@ function HTMLAnchor(id, className, href) {
     this.id = id;
     this.className = className;
     this.href = href;
+    this.redirect = function() {
+
+    }
 }
+
 
 HTMLAnchor.prototype = Object.create(HTMLElement.prototype); // {__proto__: HTMLElement.prototype}
 
@@ -57,3 +61,46 @@ a1.redirect();
 
 // console.log(a1, 'a');
 // a2.redirect();
+
+// -----------
+
+function Slider (counter) {
+ // private, protected
+    var _counter = counter;
+    var _maxCounter = counter;
+
+    this.getterCounter = function() {
+        return _counter;
+    }
+  
+    this.setterCounter = function(value) {
+        if (isNaN(value) || value > _maxCounter) {
+            return;
+        }
+
+        _counter = value;
+    }
+
+}
+
+
+var slider = new Slider(10);
+
+console.log(slider.getterCounter(), 'slidter');
+
+
+function Car(speed) {
+    var _maxSpeed = speed;
+
+    this.getMaxSpeed = function() {
+        return _maxSpeed;
+    }
+}
+
+var vw = new Car(200);
+
+// console.log(vw._maxSpeed);
+
+// console.log(_maxSpeed, '_maxSpeed');
+
+console.log(vw.getMaxSpeed());
