@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./main.css"> -->
+    <style>
+        body {
+            height: 2000px;
+            padding: 0.1px;
+        }
+
+        .box {
+        
+            cursor: pointer;
+            padding: 20px;
+            width: 200px;
+            height: 200px;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+
+            transition: background-color .2s;
+            background-color: blue;
+        }
+
+        .box:nth-child(2) {
+            left: 100px;
+            background-color: red;
+        }
+
+        body div.active {
+            border: 10px dashed black;
+            background: red;
+        }
+
+        .over {
+            background-color: red;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <div class="box">
+        zoom - 1
+    </div>
+
+    <div class="box">
+        zoom - 2
+    </div>
+
+    <div class="box">
+        zoom - 3
+    </div>
+
+</body>
+<script src="./main.js"></script>
+</html>
