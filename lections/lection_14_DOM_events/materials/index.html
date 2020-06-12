@@ -39,22 +39,59 @@
         .over {
             background-color: red;
         }
+
+        .block {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        .block__child {
+            width: 50%;
+            height: 50px;
+            background-color: yellow;
+        }
+
+        .parent {
+            width: 200px;
+            height: 200px;
+            background: greenyellow;
+            margin-top: 100px;
+            margin-left: 100px;
+        }
+
+        .target {
+            background-color: black;
+            border: 20px dashed red;
+            transition: all .2s;
+        }
     </style>
     
 </head>
 <body>
 
-    <div class="box">
-        zoom - 1
+    <!-- <div class="parent"> -->
+        <!-- <div class="block">
+            <div class="block__child">
+
+            </div>
+        </div> -->
+    <!-- </div> -->
+<!-- 
+    <div class="parent-2">
+        parent  -2 
     </div>
 
-    <div class="box">
-        zoom - 2
+    <div class="parent-3">
+        parent - 3
     </div>
 
-    <div class="box">
-        zoom - 3
-    </div>
+    <button id='go'>click</button> -->
+
+
+    <div class="box"></div>
+
+    <div class="box"></div>
 
 </body>
 <script src="./main.js"></script>
