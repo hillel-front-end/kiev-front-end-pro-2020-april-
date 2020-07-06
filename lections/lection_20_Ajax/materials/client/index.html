@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            position: fixed;
+
+            transition: all 0.2s;
+        }
+
+        form:nth-child(odd) {
+            left: -400px;
+        }
+
+        form:nth-child(even) {
+            left: 100%;
+        }
+
+        .center {
+            left: 50% !important;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+ <!-- SPA -->
+    <!-- <button id="send">send</button> -->
+
+    <form data-id="1" class="center">
+        <label for="login">user login</label>
+        <input type="text" id="login" name="login">
+        <label for="password">user password</label>
+        <input type="password" id="password" name="password">
+        <button>click</button>
+    </form>
+
+    <form data-id="2">
+        <label for="age">user age</label>
+        <input type="text" id="age" name="age">
+        <label for="sex">user sex</label>
+        <input type="text" id="sex" name="sex">
+
+        <button>click</button>
+    </form>
+
+    <form data-id="3">
+        <label for="age">user age</label>
+        <input type="text" id="age" name="age">
+        <label for="sex">user sex</label>
+        <input type="text" id="sex" name="sex">
+
+        <button>click</button>
+    </form>
+        
+    <form data-id="4">
+        <label for="age">user age</label>
+        <input type="text" id="age" name="age">
+        <label for="sex">user sex</label>
+        <input type="text" id="sex" name="sex">
+
+        <button>click</button>
+    </form>
+      
+    <!-- <script src="main.js"></script> -->
+    <script src="practice.js"></script>
+</body>
+</html>
