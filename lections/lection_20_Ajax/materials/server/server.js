@@ -23,14 +23,11 @@ app.listen(port, function () { // говорим на каком порту за
 
 // http://localhost:3003/
 const data = [
-	123 , 123, 123, 123,
-	'Hello world fron get request'
+	123 , 123, 123, 123
 ];
 
-app.get('/', function(req, res) {
-    console.log('hello path /');
-
-    res.send(JSON.stringify(data));
+app.get('/auth', function(req, res) {
+    res.send({id: '1a%6ca56'});
 })
 
 
@@ -50,8 +47,8 @@ const users = [
 
 ];
 
-app.get('/users', function(req, res) {
-	console.log(req.query, 'query');
+app.get('/candidates', function(req, res) {
+	console.log(req.params.id, 'query');
 	// const {maxAge, minAge} = req.query.minAge;
 
 	// console.log(maxAge, minAge, 'maxAge - minAge');
@@ -98,3 +95,24 @@ app.post('/user-auth', function(req, res) {
 
 
 })
+
+
+app.get('/briz', (req, res) => {
+	res.send({text: 'briz'});
+});
+
+app.get('/freez', (req, res) => {
+	res.send({text: 'freez'});
+});
+
+app.get('/foo', (req, res) => {
+	res.status(501);
+	res.send({text: 'foo'});
+
+});
+
+// MVC
+
+// MODEL
+// VIEW
+// CONTROLLER
