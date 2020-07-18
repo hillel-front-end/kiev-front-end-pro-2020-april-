@@ -37,10 +37,18 @@ const users = [
 	{
 		name: 'Valera',
 		age: 25,
+		sex: 'm',
 		id: '1231d212d12d12d'
 	},
 	{
 		name: 'Pety',
+		sex: 'ж',
+		age: 18,
+		id: '11k12k12k1212k2'
+	},
+	{
+		name: 'Pety',
+		sex: 'ж',
 		age: 18,
 		id: '11k12k12k1212k2'
 	}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: greenyellow;
+        }
+
+        body {
+            height: 50000px;
+        }
+    </style>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+
+    <div id="app">
+        {{ a + b }}
+        <br />
+        sum = 
+        {{sum()}}
+
+        
+        <hr />
+        {{isMarried? 'женат': 'не женат'}}
+
+        <hr />  
+
+        <button v-bind:disabled="isMarried">click</button>
+        <button :disabled="isMarried">click</button>
+        <a v-bind:href="href">{{href}}</a>
+
+        <hr />
+        <!-- <input type="text" v-bind:value="foo"> -->
+        <input type="text" v-model="foo">
+        <button :disabled="foo.length < 5"> auth</button>
+        length: {{foo.length}}
+
+        <ul>
+            <li
+            v-on:click="onClick"
+            v-for="menuItem in menu">
+                {{menuItem}}
+            </li>
+        </ul>
+
+        <hr>
+        <label for="">
+            Text
+            <input type="text"  v-model="data.text">
+        </label>
+
+        <label for="">
+            Value
+            <input type="text" v-model="data.value">
+        </label>
+
+        <button 
+            :disabled="!(data.text && data.value)"
+            @click="addMenuItem()">add</button>
+        
+        <hr>
+        <ul>
+            <li  
+                v-for="menuItem in menuSecond"
+                v-on:click="onClick(menuItem.value)">
+                {{menuItem.text}}
+            </li>
+        </ul>
+    </div>
+
+    <!-- {{sum()}} -->
+    <script src="./main.js"></script>
+</body>
+</html>

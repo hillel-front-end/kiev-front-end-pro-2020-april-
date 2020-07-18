@@ -5,16 +5,21 @@ import CandidatesModel from '../model/cadidates.model';
 class CandidateController {
     constructor(Model, View) {
         this.model = new Model();
-        this.view = new View();
+        this.view = new View('#app');
     }
 
-    onInit() {
-        this.getModelCandidates();
+    async onInit() {
+        const candidates = await this.asyncGetCanidates();
+        this.renderCandidates(candidates);
+
     }
 
-    getModelCandidates() {
-        this.model.asyncGetCanidates();
-        console.log(this.candidates, 'candidates');
+    async asyncGetCanidates() {
+      return await this.model.asyncGetCanidates();
+    }
+
+    renderCandidates(candidates) {
+        this.view.render(candidates)
     }
 }
 

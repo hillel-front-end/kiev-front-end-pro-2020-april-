@@ -7,5 +7,6 @@ export default class CandidatesModel {
     
     async asyncGetCanidates() {
         this.candidates = await $http.get('/candidates');
+        return this.candidates;
     }
 }
