@@ -18,6 +18,20 @@
         body {
             height: 50000px;
         }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+
+        .class-1 {
+            background-color: red;
+        }
+
+        .class-2 {
+            background-color: black;
+        }
     </style>
     
 
@@ -79,6 +93,46 @@
                 {{menuItem.text}}
             </li>
         </ul>
+
+        <!-- v-if, v-show -->
+        <hr>
+        <h2>v-if, v-show</h2>
+        <!-- <div class="box" v-show="isShow">
+            BOX-1
+        </div>
+        <div class="box" v-show="!isShow">
+            BOX-2
+        </div> -->
+
+        <!-- <div class="box" v-if="getRandom() < 10 && isMarried">
+           < 10
+        </div>
+        <div class="box" v-else-if="getRandom() > 10 && getRandom() < 20">
+            10 - 20
+        </div>
+        <div class="box" v-else>
+            > 20
+        </div> -->
+
+
+        <!-- v-bind:class, v-bind:style(HW) -->
+<!-- 
+        <div class="box" :class="classList">
+        </div> -->
+
+<!--         
+        <div class="box" :class="isMarried? 'class-1' : 'class-2'">
+        </div> -->
+<!-- 
+                
+        <div class="box" :class="{'class-1': isMarried, 'class-2': !isMarried}">
+        </div> -->
+
+
+
+        <button @click="addCssClass()">add css class</button>
+
+        <hr>
     </div>
 
     <!-- {{sum()}} -->

@@ -17,7 +17,7 @@ console.log('Lection 23 __ VUE INTRO __');
    * v-bind:class="{ 'class-name as string': Boolean, 'another-class-name': Boolean variable, .., }"
    * v-bind:class="['activeClass', errorClassAsVar]"
    * v-bind:style="{ cssPropName: activeColorAsVar, fontSize: n + 'px', matgin: '10px' }"
-5. v-on:click,mousenove .. (@click)
+5. v-on:click,@mousenove .. (@click)
 
 6. $set(vm.items, indexOfItem, newValue) // next lesson
 */
@@ -64,6 +64,14 @@ const data = {
     data: {
         text: '',
         value: ''
+    },
+    isShow: false,
+    getRandom() {
+        return Math.ceil(Math.random() * 30);
+    },
+    classList: ['class-1', 'class-2', 'class-ns'],
+    addCssClass() {
+        this.classList.pop()
     }
 };
 
