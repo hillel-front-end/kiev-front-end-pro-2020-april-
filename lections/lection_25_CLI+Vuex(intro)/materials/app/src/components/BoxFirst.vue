@@ -5,15 +5,22 @@
        <br /> 
        data from store -->
        {{$store.state.foo}}
+       {{briz}}
     </div>
 </template>
 
 <script>
 
 export default {
+    data() {
+        return {
+            briz: 123
+        }
+    },
     methods: {
         onclick() {
             console.log(this.$store.state.foo, ' this.$store')
+            this.briz
         }
     }
 }

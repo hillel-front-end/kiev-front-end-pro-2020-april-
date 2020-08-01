@@ -1,7 +1,10 @@
 <template>
     <div class="parent">
         <div>
-            Parent component
+           Hello user --> {{ getUserName }}
+
+
+           {{foo}}
         </div>
         <div class="parent__container">
             <BoxFirst></BoxFirst>
@@ -13,8 +16,14 @@
 <script>
 import BoxFirst from '@/components/BoxFirst';
 import BoxSecond from '@/components/BoxSecond';
+import { mapGetters, mapActions, mapMutations } from 'vuex';
+
+// console.log(...mapGetters(['getUserName']))
 
 export default {
+    computed: {
+        ...mapGetters(['getUserName', 'foo'])
+    },
     components: {
         BoxFirst: BoxFirst,
         BoxSecond: BoxSecond
