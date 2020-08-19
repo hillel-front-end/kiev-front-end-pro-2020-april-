@@ -2,20 +2,28 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Auth from '../views/Auth.vue'
 import Dashboard from '../views/Dashboard.vue'
+import NotFound from '../views/NotFound.vue'
 import store from '@/store/index'
+
 
 Vue.use(VueRouter)
 
+// /foo
+
 const routes = [
   {
-    path: '/',
+    path: '/auth',
     name: 'Auth',
     component: Auth
   },
   {
-    path: '/dashboard',
+    path: '/',
     name: 'Dashboard',
     component: Dashboard
+  },
+  {
+    path: '*',
+    component: NotFound
   }
 ]
 
@@ -28,14 +36,27 @@ const router = new VueRouter({
 // to - куда идем
 // from -- откуда
 // next()
-router.beforeEach((to, from, next) => {
-  const isAuth = store.getters['GET_IS_AUTH'];
 
-  if(!isAuth && to.name.toLowerCase() != 'auth') {
-     router.push('/');
-  } else {
+router.beforeEach(async (to, from, next) => {
+  const isAuthRoute = to.name && to.name.toLowerCase() == 'auth';
+
+  if(isAuthRoute) {
     next();
+    return;
   }
+  const isExistUserInfo = store.getters['GET_USER_INFO'];
+
+  if(!isExistUserInfo) {
+    try {
+      await store.dispatch('asyncSignIn');
+      next();
+      return;
+    } catch (e) {
+      next('/auth');
+    }
+  }
+
+  next();
 })
 
 export default router

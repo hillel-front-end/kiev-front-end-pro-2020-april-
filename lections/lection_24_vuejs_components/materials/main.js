@@ -5,6 +5,8 @@ var a = new Vue({ // Вызывается конструктор new Vue()
     list: [1,2,3]
   },
   beforeCreate () {
+    debugger;
+    console.log(this, 'this');
     console.log('beforeCreate'); // Перед созданием объекта Vue вызывается метод beforeCreate().  в this - еще не доступны данные из data
   },
 
@@ -13,6 +15,9 @@ var a = new Vue({ // Вызывается конструктор new Vue()
   */
 
   created () { // После создания объекта Vue вызывается метод created(), в this - уже доступны данные из data
+
+    debugger;
+    console.log(this, 'this');
     console.log('created');
   },
 
